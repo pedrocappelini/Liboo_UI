@@ -5,16 +5,36 @@ import icon from "../../resources/icon.png?asset";
 
 function createWindow(): void {
   const mainWindow = new BrowserWindow({
-    width: 900,
-    height: 670,
+    width: 300,
+    height: 260,
     show: false,
     autoHideMenuBar: true,
+    frame: false,
+    alwaysOnTop: true,
     ...(process.platform === "linux" ? { icon } : {}),
     webPreferences: {
       preload: join(__dirname, "../preload/index.js"),
-      sandbox: true,
       contextIsolation: true,
     },
+  });
+
+  ipcMain.on("minimize-window", () => {
+    const win = BrowserWindow.getFocusedWindow();
+    win?.minimize();
+  });
+
+  ipcMain.on("maximize-window", () => {
+    const win = BrowserWindow.getFocusedWindow();
+    if (win?.isMaximized()) {
+      win?.unmaximize();
+    } else {
+      win?.maximize();
+    }
+  });
+
+  ipcMain.on("close-window", () => {
+    const win = BrowserWindow.getFocusedWindow();
+    win?.close();
   });
 
   mainWindow.on("ready-to-show", () => {
@@ -39,8 +59,6 @@ app.whenReady().then(() => {
   app.on("browser-window-created", (_, window) => {
     optimizer.watchWindowShortcuts(window);
   });
-
-  ipcMain.on("ping", () => console.log("pong"));
 
   createWindow();
 
