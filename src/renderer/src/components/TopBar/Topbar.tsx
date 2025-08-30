@@ -3,7 +3,7 @@ import styles from "./TopBar.module.css";
 
 const Topbar: React.FC = () => {
   const [isCHovered, setIsCHovered] = useState(false);
-  const [isMaxHovered, setMaxIsHovered] = useState(true);
+  const [isMaxHovered, setMaxIsHovered] = useState(false);
   const [isMinHovered, setIsMinHovered] = useState(false);
   return (
     <nav className={styles.topbar}>

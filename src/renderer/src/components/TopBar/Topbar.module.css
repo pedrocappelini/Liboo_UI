@@ -3,8 +3,7 @@
   justify-content: space-between;
   align-items: center;
   height: 32px;
-  padding: 0 10px;
-  background-color: rgba(27, 27, 23, 0.651);
+  background-color: rgba(60, 60, 60);
   color: rgb(96, 88, 88);
   user-select: none;
   -webkit-app-region: drag;
@@ -13,50 +12,45 @@
 .title {
   font-family: sans-serif;
   font-size: 14px;
+  font-weight: 500;
+  margin-left: 12px;
+  color: rgb(151, 154, 154);
 }
 
 .windowControls {
   display: flex;
-  gap: 2px;
   -webkit-app-region: no-drag;
+  height: 100%;
 }
 
-.closeButton {
-  -webkit-app-region: no-drag;
-  background-color: transparent;
-  border: none;
-  color: rgb(96, 88, 88);
-}
-.minimizeButton {
-  -webkit-app-region: no-drag;
-  background-color: transparent;
-  border: none;
-  color: rgb(96, 88, 88);
-}
+.minimizeButton,
+.closeButton,
 .maximizeButton {
   -webkit-app-region: no-drag;
   background-color: transparent;
   border: none;
-  color: rgb(96, 88, 88);
+  color: rgb(137, 131, 131);
+  padding: 0 18px;
+  height: 100%;
+
+  transition: background-color 0.05s ease-in-out;
 }
 
 .closeButtonHover {
   -webkit-app-region: no-drag;
-  background-color: red;
+  background-color: rgb(232, 17, 35);
   border: none;
   color: rgb(255, 255, 255);
+  padding: 0 18px;
+  height: 100%;
 }
 
-.maxButtonHover {
-  -webkit-app-region: no-drag;
-  background-color: rgb(97, 89, 89);
-  border: none;
-  color: rgb(255, 255, 255);
-}
-
+.maxButtonHover,
 .minButtonHover {
   -webkit-app-region: no-drag;
-  background-color: rgb(97, 89, 89);
+  background-color: rgba(80, 80, 80);
   border: none;
-  color: rgb(255, 255, 255);
+  color: rgb(137, 131, 131);
+  padding: 0 18px;
+  height: 100%;
 }

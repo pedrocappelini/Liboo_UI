@@ -8,8 +8,8 @@ function App() {
     <div className="app-layout">
       <Topbar />
       <main className="content">
-        <h1>Welcome to Your App!</h1>
-        <p>The layout is now fixed using your existing CSS files.</p>
+        <h1>Welcome to Liboo</h1>
+        <p>Yeah... there's nothing here really</p>
       </main>
     </div>
   );
